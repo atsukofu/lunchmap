@@ -56,7 +56,8 @@ class ShopController extends Controller
     public function show($id)
     {
         $shop = Shop::find($id);
-        return view('show', ['shop' => $shop]);
+        $map = config('lunchmap.GOOGLE_MAP_KEY');
+        return view('show', ['shop' => $shop, 'map' => $map]);
     }
 
     /**
